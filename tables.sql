@@ -125,11 +125,11 @@ alter table EMPLOYER
        references SALARIE (NUMERO_SALARIE);
 
 alter table PARTICIPE
-    add constraint fk1_avoir foreign key (NUMERO_ENTREPRISE)
+    add constraint fk1_participe foreign key (NUMERO_ENTREPRISE)
        references ENTREPRISE (NUMERO_ENTREPRISE);
 
 alter table PARTICIPE
-    add constraint fk2_avoir foreign key (NOM_SECTEUR)
+    add constraint fk2_participe foreign key (NOM_SECTEUR)
        references SECTEUR (NOM_SECTEUR);
 
 alter table AFFECTER

@@ -6,7 +6,7 @@ create table ELEVE
     ADRESSE_ELEVE		   CHAR(50)			  ,
     MAIL_ELEVE			   CHAR(50)			  ,
     TELEPHONE_ELEVE		   CHAR(20)			  ,
-    ANNEE_ETUDES		   CHAR(10) 			  ,     
+    ANNEE_ETUDES		   NUMBER(1) 			  ,     
     DEPARTEMENT			   CHAR(3)			  ,
     constraint pk_eleve primary key (NUMERO_ELEVE)
 );
@@ -64,7 +64,6 @@ create table SALARIE
     constraint pk_salarie primary key (NUMERO_SALARIE)
 );
 
-
 create table EST_CONTACT
 (
     NUMERO_SALARIE			NUMBER(3)		not null,
@@ -79,7 +78,6 @@ create table EST_RESPONSABLE
     constraint pk_est_responsable primary key (NUMERO_SALARIE, NUMERO_STAGE)
 );
 
-
 create table EMPLOYER
 (
     NUMERO_ENTREPRISE			NUMBER(3)		not null,
@@ -87,14 +85,12 @@ create table EMPLOYER
     constraint pk_employer primary key (NUMERO_ENTREPRISE, NUMERO_SALARIE)
 );
 
-
-create table AVOIR
+create table PARTICIPE
 (
     NUMERO_ENTREPRISE			NUMBER(3)		not null,
     NOM_SECTEUR				CHAR(20)		not null,
     constraint pk_avoir primary key (NUMERO_ENTREPRISE, NOM_SECTEUR)
 );
-
 
 create table AFFECTER
 (
@@ -128,11 +124,11 @@ alter table EMPLOYER
     add constraint fk2_employer foreign key (NUMERO_SALARIE)
        references SALARIE (NUMERO_SALARIE);
 
-alter table AVOIR
+alter table PARTICIPE
     add constraint fk1_avoir foreign key (NUMERO_ENTREPRISE)
        references ENTREPRISE (NUMERO_ENTREPRISE);
 
-alter table AVOIR
+alter table PARTICIPE
     add constraint fk2_avoir foreign key (NOM_SECTEUR)
        references SECTEUR (NOM_SECTEUR);
 

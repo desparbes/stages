@@ -1,0 +1,10 @@
+delete from AFFECTER;
+delete from PARTICIPE;
+delete from EST_CONTACT;
+delete from SALARIE;
+delete from TUTEUR;
+delete from SECTEUR;
+delete from ENTREPRISE;
+delete from STAGE;
+delete from ELEVE;
+commit;

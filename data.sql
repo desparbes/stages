@@ -1,26 +1,11 @@
---==========================================================================
--- 	CLEANING
--- ========================================================================
-delete from ELEVE;
-delete from STAGE;
-delete from ENTREPRISE;
-delete from SECTEUR;
-delete from TUTEUR;
-delete from SALARIE;
-delete from EST_CONTACT;
-delete from PARTICIPE;
-delete from AFFECTER;
-
-commit;
-
 -- =============================================================
 -- 		ENTREPRISE
 -- ============================================================
 
-insert into ENTREPRISE values (1, 'ATOS'   , '1 RUE RUE'  , 33400  , 'TALENCE'  , '0505050505'  , 'ATOS@ATOS.FR'    , 50  , 'PME'   , null  ) ;
-insert into ENTREPRISE values (2, 'ATOS2'  , '1 RUE RUE'  , 33400  , 'TALENCE'  , '0505050505'  , 'ATOS2@ATOS.FR'   , 50  , 'PME'   , null  ) ;
-insert into ENTREPRISE values (3, 'ATOS3'  , '1 RUE RUE'  , 33400  , 'TALENCE'  , '0505050505'  , 'ATOS3@ATOS.FR'   , 50  , 'PME'   , null  ) ;
-insert into ENTREPRISE values (4, 'ATOS4'  , '1 RUE RUE'  , 33400  , 'TALENCE'  , '0505050505'  , 'ATO4S@ATOS.FR'   , 50  , 'PME'   , null  ) ;
+insert into ENTREPRISE values (1, 'ATOS'   , '1 RUE RUE'  , 33400  , 'TALENCE'  , '0505050505'  , 'WWW.ATOS.FR'    , 50  , 'PME'   , null  ) ;
+insert into ENTREPRISE values (2, 'ATOS2'  , '1 RUE RUE'  , 33400  , 'TALENCE'  , '0505050505'  , 'WWW.ATOS.FR'   , 50  , 'PME'   , null  ) ;
+insert into ENTREPRISE values (3, 'ATOS3'  , '1 RUE RUE'  , 33400  , 'TALENCE'  , '0505050505'  , 'WWW.ATOS.FR'   , 50  , 'PME'   , null  ) ;
+insert into ENTREPRISE values (4, 'ATOS4'  , '1 RUE RUE'  , 33400  , 'TALENCE'  , '0505050505'  , 'WWW.ATOS.FR'   , 50  , 'PME'   , null  ) ;
 
 commit;
 
@@ -45,7 +30,7 @@ insert into PARTICIPE values (  1  ,  'INFORMATIQUE'  )  ;
 insert into SALARIE values ( 1 , 'FRANCOIS'  , 'CLAUDE'    , 'TECHNICIEN'      , 'CLAUDE.FRANCOIS@GMAIL.COM'     , '0101010101'   ,   1  ) ;
 insert into SALARIE values ( 2 , 'GABI2'     , 'BERNARD2'  , 'COMMUNICATION'   , 'QSDKJ@GMAIL.FR'                , '321313123'    ,   2  ) ; 
 insert into SALARIE values ( 3 , 'GABI3'     , 'BERNARD3'  , 'COMMUNICATION'   , 'QSDKJ@GMAIL.FR'                , '321313123'    ,   3  ) ;
-insert into SALARIE values ( 4 , 'GABI4'     , 'BERNARD4'  , 'COMMUNICATION'   ,  'QSDKJ@GMAIL.FR'               , '321313123'    ,   4  ) ;
+insert into SALARIE values ( 4 , 'GABI4'     , 'BERNARD4'  , 'COMMUNICATION'   , 'QSDKJ@GMAIL.FR'                , '321313123'    ,   4  ) ;
 insert into SALARIE values ( 5 , 'GABI5'     , 'BERNARD5'  , 'COMMUNICATION'   , 'QSDKJ@GMAIL.FR'                , '321313123'    ,   4  ) ;
 
 commit;
@@ -54,11 +39,11 @@ commit;
 --		STAGE 
 --======================================================================
 
-insert into STAGE values ( 1  , 'MODELISATION' , 'PARIS'    , '01-JUL-16' , '31-JUL-16' , 9999  ,  'PHYSIQUE'     , 2  ,  1 ) ;
-insert into STAGE values ( 2  , 'RECHERCHE OP' , 'PARIS'    , '01-JUL-16' , '31-JUL-16' , 9999  ,  'MATHS'        , 2  ,  2 ) ;
-insert into STAGE values ( 3  , 'MODELISATION' , 'BORDEAUX' , '01-JUL-16' , '31-JUL-16' , 9999  ,  'PHYSIQUE'     , 2  ,  3 ) ;
-insert into STAGE values ( 4  , 'MODELISATION' , 'PARIS'    , '01-JUL-16' , '31-JUL-16' , 9999  ,  'INFORMATIQUE' , 2  ,  4 ) ;
-insert into STAGE values ( 5  , 'MODELISATION' , 'PARIS'    , '01-JUL-16' , '31-JUL-16' , 9999  ,  'PHYSIQUE'     , 2  ,  5 ) ;
+insert into STAGE values ( 1  , 'MODELISATION' , 'PARIS'    , '01-07-16' , '31-07-16' , 9999  ,  'PHYSIQUE'     , 2  ,  1 ) ;
+insert into STAGE values ( 2  , 'RECHERCHE OP' , 'PARIS'    , '01-07-16' , '31-07-16' , 9999  ,  'MATHS'        , 2  ,  2 ) ;
+insert into STAGE values ( 3  , 'MODELISATION' , 'BORDEAUX' , '01-07-16' , '31-07-16' , 9999  ,  'PHYSIQUE'     , 2  ,  3 ) ;
+insert into STAGE values ( 4  , 'MODELISATION' , 'PARIS'    , '01-07-16' , '31-07-16' , 9999  ,  'INFORMATIQUE' , 2  ,  4 ) ;
+insert into STAGE values ( 5  , 'MODELISATION' , 'PARIS'    , '01-07-16' , '31-07-16' , 9999  ,  'PHYSIQUE'     , 2  ,  5 ) ;
 
 commit;
 

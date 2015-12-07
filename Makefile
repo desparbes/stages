@@ -1,12 +1,17 @@
+SRC=src
+BUILD=build
+
+.PHONY: build
+
 all: build
 
-build: Parser.java Display.java Interface.java
-	javac $^
+build: $(SRC)/*.java
+	javac -d $(BUILD) $^
 
 launch:
-	java Interface
+	cd $(BUILD) && java Interface
 
 clean:
-	rm *.class
+	rm $(BUILD)/*.class
 
 

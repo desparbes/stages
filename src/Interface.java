@@ -7,9 +7,9 @@ public class Interface {
     static private Statement stmt;
     static private Connection conn;
     static private int displayWidth;
-//    private enum Action {ADD, UPDATE, REMOVE;}
 
     static private void querySQLFile(String fileName) {
+	fileName = "../queries/" + fileName;
 	Parser p = new Parser();
 	Display d = new Display();
 	try {
@@ -24,54 +24,17 @@ public class Interface {
     }
 
     static private void updateSQLFile(String fileName) {
+	fileName = "../update/" + fileName;
 	Parser p = new Parser();
 	try {
 	    String[] queries = p.parseSQLFile(fileName);
 	    for (int i = 0; i < queries.length; i++) {
 		stmt.executeUpdate(queries[i]);
 	    }
+	    System.out.println("Update " + fileName + " successfully executed");
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
-    }
-/*
-    static void manageCompany(int arg) {
-	switch (arg) {
-	case ADD:
-	    askAttibutes(
-	    break:
-    }
-*/
-    static private void manageTables(int arg) {
-/*	boolean stop = false;
-	while (!stop) {
-	    System.out.println("1: Company\n" +
-			       "2: Internship\n" +
-			       "3: Sector\n" +
-			       "4: Employee\n" +
-			       "5: Student\n"
-			       "6: Tutor\n" +
-			       "7: Exit\n");
-	    String choice = sc.nextLine();
-
-	    if ("1".equals(choice))
-		manageCompany(arg);
-	    else if ("2".equals(choice))
-		manageInternship(arg);
-	    else if ("3".equals(choice))
-		manageSector(arg);
-	    else if ("4".equals(choice))
-		manageEmployee(arg);
-	    else if ("5".equals(choice))
-		manageStudent(arg);
-	    else if ("6".equals(choice))
-		manageTutor(arg);
-	    else if ("7".equals(choice))
-		stop = true;
-	    else
-		System.out.println("Invalid argument\n");
-		}
-*/
     }
 
     public static void main(String[] args)
@@ -94,7 +57,7 @@ public class Interface {
 	    displayWidth = 13;
 
 	    while (!stop) {
-		System.out.println("MAIN MENU\n" + 
+		System.out.println("\nMAIN MENU\n" + 
 				   "1: Initialize tables\n" +
 				   "2: Delete tables\n" +
 				   "3: Clean tables\n" +
@@ -110,12 +73,6 @@ public class Interface {
 		    updateSQLFile("reset_tables.sql");
 		else if ("3".equals(choice))
 		    updateSQLFile("reset_data.sql");
-/*		else if ("4".equals(choice))
-		    manageTables(ADD);
-		else if ("5".equals(choice))
-		    manageTables(UPDATE);
-		else if ("6".equals(choice))
-		manageTables(REMOVE);*/
 		else if ("4".equals(choice))
 		    updateSQLFile("data.sql");
 		else if ("5".equals(choice)) {
@@ -125,7 +82,7 @@ public class Interface {
 			int tmp = width.nextInt();
 			displayWidth = tmp;
 		    } catch (InputMismatchException e) {
-			System.out.println("Invalid width\n");
+			System.out.println("Invalid width");
 		    }
 		} else if ("6".equals(choice)) {
 		    try {
@@ -133,12 +90,12 @@ public class Interface {
 			choice = sc.nextLine();
 			querySQLFile(choice);
 		    } catch (InputMismatchException e) {
-			System.out.println("Invalid file name\n");
+			System.out.println("Invalid file name");
 		    }
 		} else if ("7".equals(choice))
 		    stop = true;
 		else
-		    System.out.println("Invalid argument\n");
+		    System.out.println("Invalid argument");
 	    }
 	    stmt.close();
 	} catch (Exception e) {

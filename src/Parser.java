@@ -15,7 +15,7 @@ public class Parser {
 	    BufferedReader br = new BufferedReader(fr);
 	    // Elimination des commentaires
 	    while ((s = br.readLine()) != null)	{
-		sb.append(s.split("--")[0]);
+		sb.append(" " + s.split("--")[0]);
 	    }
 	    br.close();
  

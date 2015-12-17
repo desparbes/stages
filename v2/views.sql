@@ -1,6 +1,7 @@
 --=============================================================
 -- DROP
 --===========================================================
+drop view Professeurs;
 drop view Nom_Entreprises;
 drop view Info_Stage;
 drop view Duree_Stage_Moy;
@@ -8,14 +9,14 @@ drop view Nb_Offres_Prop;
 drop view Nb_Offres_Pourv;
 drop view Classe_Dep;
 drop view Classe_Fournisseur;
-drop view if exists Classe_Offres;
+drop view Classe_Offres;
 -- ============================================================
 --                         Views
 -- ============================================================
 
 create view Nom_Entreprises as select * from Entreprise;
 
-drop view if exists Professeurs;
+
 create view Professeurs as
        select P.Numero_personne as Numero_professeur, P.Mail as Mail, P.Nom_personne as Nom_personne, P.Prenom_personne as Prenom_personne, P.Telephone_personne as Telephone_personne from Personne P
        except
@@ -80,3 +81,4 @@ create view Classe_Offres as
        where E.Numero_entreprise = S.Numero_entreprise
        and S.Numero_stage!=-1
        order by S.Sujet asc, E.Numero_adresse asc;
+
